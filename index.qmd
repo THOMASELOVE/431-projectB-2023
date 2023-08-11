@@ -1,0 +1,18 @@
+---
+title: "431 Project B Instructions"
+author: "431 Staff"
+date: last-modified
+---
+
+# Detailed Instructions Coming later this semester!
+
+## What is Project B?
+
+Project B is the second of two real data science projects you'll be doing this semester. It involves the completion of four tasks, which you’ll start working on in early November:
+
+1. You will complete a Proposal to obtain my approval for your plan, let me know if you’re working with a partner, and schedule your oral presentation.
+2. You (and your partner, if applicable) will present your project sometime between 12-11 and 12-15 to Dr. Love in his office in person or via Zoom.
+3. You will build Quarto and HTML reports describing your work.
+4. Finally, you will complete a Self-Evaluation form.
+
+We strongly encourage you not to worry about Project B until you’ve completed Project A.
