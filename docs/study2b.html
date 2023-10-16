@@ -9,7 +9,7 @@
 <meta name="author" content="431 Staff">
 <meta name="dcterms.date" content="2023-10-16">
 
-<title>431 Project B - 431 Project B Instructions</title>
+<title>431 Project B - Study 2 Report Specifications</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -61,6 +61,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -82,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -184,15 +186,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-project-b" id="toc-what-is-project-b" class="nav-link active" data-scroll-target="#what-is-project-b">What is Project B?</a></li>
-  <li><a href="#whats-on-this-website" id="toc-whats-on-this-website" class="nav-link" data-scroll-target="#whats-on-this-website">What’s on this Website</a></li>
-  <li><a href="#project-b-deliverables" id="toc-project-b-deliverables" class="nav-link" data-scroll-target="#project-b-deliverables">Project B Deliverables</a></li>
-  <li><a href="#partnerships" id="toc-partnerships" class="nav-link" data-scroll-target="#partnerships">Partnerships?</a></li>
-  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
-  <li><a href="#study-1" id="toc-study-1" class="nav-link" data-scroll-target="#study-1">Study 1</a></li>
-  <li><a href="#study-2" id="toc-study-2" class="nav-link" data-scroll-target="#study-2">Study 2</a></li>
-  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions?</a></li>
+  <li><a href="#headings-you-should-use-in-the-study-2-report" id="toc-headings-you-should-use-in-the-study-2-report" class="nav-link active" data-scroll-target="#headings-you-should-use-in-the-study-2-report">Headings you should use in the Study 2 report</a></li>
   </ul>
 </nav>
     </div>
@@ -201,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">431 Project B Instructions</h1>
+<h1 class="title">Study 2 Report Specifications</h1>
 </div>
 
 
@@ -228,118 +222,104 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="what-is-project-b" class="level1">
-<h1>What is Project B?</h1>
-<p>Project B is the second of two real data science projects you’ll be doing this semester. It involves the completion of four tasks, which you’ll start working on in early November:</p>
+<p>Produce a beautiful HTML report. It should include:</p>
+<ul>
+<li>a meaningful title: do not use the terms “Project” or “Project B” or “431” or “Study 2” in your title.</li>
+<li>an easy-to-understand and easy-to-navigate table of contents using the headings and subheadings provided below</li>
+<li>numbered sections and sub-sections (use <strong>number_sections: TRUE</strong> in your YAML)</li>
+<li>the full names of the author(s), properly formatted</li>
+<li>the date, properly formatted using <code>date: last-modified</code> in your YAML, and using <code>date-format: iso</code> under <code>format:</code> and <code>html:</code>)</li>
+<li>no hashtags in the R results (use <strong>knitr::opts_chunk$set(comment = NA)</strong> to do this)</li>
+<li>no warnings, and do what you can to hide unhelpful messages with <code>message = FALSE</code> as needed</li>
+<li>no hidden code chunks</li>
+</ul>
+<section id="headings-you-should-use-in-the-study-2-report" class="level2">
+<h2 class="anchored" data-anchor-id="headings-you-should-use-in-the-study-2-report">Headings you should use in the Study 2 report</h2>
+<p>All of your work should be done in a fresh R project in a clean directory on your computer.</p>
 <ol type="1">
-<li>You will complete a Registration Form to obtain my approval for your plan, let me know if you’re working with a partner, and schedule your oral presentation.</li>
-<li>You (and your partner, if applicable) will present your project sometime between 12-11 and 12-14 to Dr.&nbsp;Love in his office in person or via Zoom.</li>
-<li>You will build Quarto and HTML reports describing your work.</li>
-<li>Finally, you will complete a Self-Evaluation form.</li>
+<li>Setup and Data Ingest</li>
+<li>Cleaning the Data
+<ul>
+<li>Be sure to review the material (including the Tips on Cleaning Data) provided in the <a href="./data1.html">Data Development section</a> of this website.</li>
+</ul></li>
+<li>Codebook and Data Description
+<ul>
+<li>Follow the headings and steps laid out in the <a href="./study1b.html">Study 1 instructions</a> for this section.</li>
+<li>You should include subsections for your codebook, a listing of your analytic tibble, and a numeric description, as you did in <a href="./study1b.html">Study 1</a>.</li>
+<li>Make the word <strong>Outcome</strong> in bold the first word of the description for your outcome in your codebook.</li>
+<li>Make the words <strong>Key Predictor</strong> in bold the first two words of the description for your key predictor in your codebook.</li>
+</ul></li>
+<li>My Research Question
+<ul>
+<li>Specify your research question, with whatever introduction and background you feel is required for Dr.&nbsp;Love to understand its importance. If you have a pre-analytic guess as to how this will work out in your setting, please feel encouraged to include that here. The actual question should end with a question mark, and be appropriate for the nature of the analyses to come.</li>
+</ul></li>
+<li>Partitioning the Data
+<ul>
+<li>Split the data into two samples (a model training sample containing 60-80% of the data, and a model test sample containing the remaining 20-40%.) Details on how to do this <a href="./study2a.html">are available here</a>.</li>
+<li>Be sure to demonstrate that each subject in the original data wound up in either your training or your test sample.</li>
+</ul></li>
+<li>Transforming the Outcome
+<ul>
+<li>Using your training sample, provide appropriate, well-labeled visualizations of your outcome, and investigate potential transformations of that outcome for the purpose of fitting regression models in a useful way.</li>
+<li>Make a clear decision about what transformation (if any) you want to use. Don’t use a transformation you cannot interpret.</li>
+<li>If your outcome is symmetric but with outliers, power transformations will not be of much help.</li>
+<li>If your outcome includes non-positive values, you may have to add the same value to each observation of the outcome before using power transformations. (For instance, if some of your values of your raw outcome are 0, you might add 1 to each observation before considering a transformation.)</li>
+</ul></li>
+<li>The Big Model
+<ul>
+<li>Fit a linear regression model including all of your candidate predictors for your (possibly transformed) outcome within your training sample. Summarize its prediction equation, and the other materials available through a tidy summary of the coefficients.</li>
+<li>If you want to divide this work into subsections, that’s up to you.</li>
+</ul></li>
+<li>The Smaller Model
+<ul>
+<li>Fit a linear regression model using a subset of your predictors that is interesting, again using the training sample. Summarize its prediction equation, and the other materials available through a tidy summary of the coefficients.</li>
+<li>Your subset must include at least the key predictor, and a perfectly reasonable strategy for this project is simply to compare the “naive” model with the key predictor alone to the full model with all predictors you have identified.</li>
+<li>If you prefer to use another subset of predictors from your big model as your smaller model, that’s fine, too. If you’d prefer to use an automated or semi-automated strategy for identifying your subset of predictors from the big model, that’s also fine.</li>
+<li>If you want to divide this work into subsections, that’s up to you.</li>
+</ul></li>
+<li>In-Sample Comparison
+<ul>
+<li>Present three subsections here, as labeled below.</li>
+<li>In <strong>Quality of Fit</strong>, use <strong>glance</strong> for each of the models you fit (Big and Smaller) to summarize the quality of fit (focusing on <span class="math inline">\(R^2\)</span>, adjusted <span class="math inline">\(R^2\)</span>, AIC and BIC) within the training sample.</li>
+<li>In <strong>Assessing Assumptions</strong>, use <code>augment</code> to help you create and assess residual plots (specifically you should be looking at the assumptions of linearity, constant variance and Normality) for each of the two models.</li>
+<li>In <strong>Comparing the Models</strong>, comment on the relative strengths and weaknesses of the two models within your training sample. Which model do you prefer, based on this information?</li>
+</ul></li>
+<li>Model Validation
+<ul>
+<li>This should have four subsections, as labeled below.</li>
+<li><strong>Calculating Prediction Errors</strong> Apply each of your models to the test sample to predict the outcome and do whatever back-transformation of the <code>augment</code> results is necessary.</li>
+<li><strong>Visualizing the Predictions</strong> Provide an appropriate visualization of the outcome predictions (after back-transformation) made by the two models. Are they similar?</li>
+<li><strong>Summarizing the Errors</strong> Then summarize the following values, all on the scale of the original untransformed outcome, across the observations in your test sample, in an attractive table.
+<ul>
+<li>square root of the mean squared prediction error (RMSPE)</li>
+<li>mean absolute prediction error (MAPE)</li>
+<li>maximum absolute prediction error (MAE)</li>
+<li>squared correlation of the actual and predicted values (validated <span class="math inline">\(R^2\)</span>)</li>
+</ul></li>
+<li><strong>Comparing the Models</strong> Use the results from the previous two subsections to comment on the relative strengths and weaknesses of the two models within your test sample. Which model do you prefer now?</li>
+</ul></li>
+<li>Discussion
+<ul>
+<li>This should have four subsections, as labeled below.</li>
+<li><strong>Chosen Model</strong>
+<ul>
+<li>Specify which model you’ve chosen, based on your conclusions from sections 9 and 10.</li>
+</ul></li>
+<li><strong>Answering My Question</strong>
+<ul>
+<li>Use the result of this model to answer your research question in a few sentences. Comment on whether your results matched up with your pre-analysis expectations, and also specify any limitations you see on this conclusion.</li>
+</ul></li>
+<li><strong>Next Steps</strong>
+<ul>
+<li>Discuss an interesting next step you would like to pursue to learn more about this sort of research question or to go further with these data.</li>
+</ul></li>
+<li><strong>Reflection</strong>
+<ul>
+<li>Briefly describe what you would have done differently in Study 2 had you known at the start of the project what you have learned by doing it.</li>
+</ul></li>
+</ul></li>
+<li>Include the session information with <strong>session_info()</strong> (either from <code>xfun</code> or <code>sessioninfo</code>) as a separate section at the end of your report.</li>
 </ol>
-<p>We strongly encourage you not to worry about Project B until you’ve completed Project A.</p>
-</section>
-<section id="whats-on-this-website" class="level1">
-<h1>What’s on this Website</h1>
-<ul>
-<li><a href="./data1.html">The Data</a>: Instructions on getting data for Project B
-<ul>
-<li>You’ll either use <a href="./data2.html">data from NHANES</a>, or from <a href="./data3.html">some other source</a>.</li>
-</ul></li>
-<li><a href="./register.html">Registration information</a> for your Project B plan.
-<ul>
-<li>This involves completing a <a href="https://bit.ly/431-projB-registration-2023">Google Form</a> by the deadline in mid-November specified on the <a href="https://thomaselove.github.io/431-2023/calendar.html">Course Calendar</a>. In this form, you will:
-<ul>
-<li>specify whether or not you are working with a partner</li>
-<li>tell us a little about the data source (NHANES or other) you plan to use</li>
-<li>provide options for when you can give your oral presentation, and whether you prefer to do so in person or via Zoom</li>
-</ul></li>
-</ul></li>
-<li>Instructions for <a href="./study1a.html">Study 1</a>
-<ul>
-<li>You’ll find information on <a href="./study1a.html">required Study 1 analyses</a></li>
-<li>We also provide detailed <a href="./study1b.html">Study 1 report specifications</a></li>
-<li>You’ll also find a <a href="./study1c.html">Study 1 example report</a></li>
-</ul></li>
-<li>Instructions for <a href="./study2a.html">Study 2</a>
-<ul>
-<li>You’ll find information on <a href="./study2a.html">required Study 2 analyses</a></li>
-<li>We also provide detailed <a href="./study2b.html">Study 2 report specifications</a></li>
-<li>You’ll also find a <a href="./study2c.html">Study 2 example report</a></li>
-</ul></li>
-<li><a href="./self_eval.html">Self-Evaluation Form</a> for Project B
-<ul>
-<li>If you work with a partner, each of you submits this form separately.</li>
-</ul></li>
-<li>A <a href="./checklist.html">Checklist</a> of the tasks that need to be accomplished for Project B, which also includes some details on the oral presentation you’ll give to Dr.&nbsp;Love in December.</li>
-<li>A <a href="./tipsheet.html">Tip Sheet</a> of about 20 things that came up last year that are worth your attention as you prepare your final materials for presentation and submission.</li>
-<li>The top menu also provides links to contact us, and to the 431 home page.</li>
-</ul>
-<p>All of the material you need (from a statistical and coding perspective) to do Project B has been or will be covered in our first 24 classes (which includes classes through the end of November), as well as in the Course Notes and Labs 1-7.</p>
-</section>
-<section id="project-b-deliverables" class="level1">
-<h1>Project B Deliverables</h1>
-<ol type="1">
-<li>You will complete a <a href="./register.html">Registration Form</a> to obtain my approval for your plan, let me know if you’re working with a partner, and schedule your oral presentation, by the (mid-November) deadline on the <a href="https://thomaselove.github.io/431-2023/calendar.html">Course Calendar</a>.</li>
-<li>You (and your partner, if applicable) will present your project to Dr.&nbsp;Love in his office. Details on the Oral Presentation are found in the <a href="./checklist.html">Checklist</a> menu above. Presentations will be scheduled on December 11-14 using the <a href="./register.html">Registration Form</a>.</li>
-<li>You will build two Quarto and HTML reports (separate reports for <a href="./study1a.html">Study 1</a> and <a href="./study2a.html">Study 2</a>) by the final Project B deadline in the <a href="https://thomaselove.github.io/431-2023/calendar.html">Course Calendar</a>.
-<ul>
-<li>If you’re not using NHANES data, you’ll also submit your data to Dr.&nbsp;Love at that time.</li>
-</ul></li>
-<li>Finally, you will complete a <a href="./self_eval.html">Self-Evaluation form</a>, as you did in Project A, by the final Project B deadline in the <a href="https://thomaselove.github.io/431-2023/calendar.html">Course Calendar</a>.</li>
-</ol>
-</section>
-<section id="partnerships" class="level1">
-<h1>Partnerships?</h1>
-<p>You can work alone, or with one other person on this project. If you work as a pair, you will commit to that when you <a href="./register.html">register for the project</a>. Each of you will receive the team grade for the project reports, and an individual grade for the other components of the project.</p>
-</section>
-<section id="the-data" class="level1">
-<h1>The Data</h1>
-<p>You will work with the same <a href="./data1.html">data source</a> for <a href="./study1a.html">Study 1</a> and for <a href="./study2a.html">Study 2</a>, and these data will be developed either <a href="./data2.html">from NHANES</a> or from <a href="./data3.html">another public source</a> that you identify.</p>
-<ul>
-<li>You will find detailed instructions regarding the use of NHANES data for Project B <a href="./data2.html">here</a>.</li>
-<li>If you want to <a href="./data3.html">use other data</a>, you’ll need it to meet some specifications we’ll describe, and you’ll have to get Dr.&nbsp;Love’s permission when you <a href="./register.html">register your project</a>.</li>
-<li>Since most people consider working with NHANES data to be easier, we award <strong>four</strong> extra points to projects which use non-NHANES data.</li>
-</ul>
-</section>
-<section id="study-1" class="level1">
-<h1>Study 1</h1>
-<ul>
-<li><a href="./study1a.html">Study 1</a> is about making descriptive and exploratory comparisons and summaries of data. It’s not about building sophisticated statistical models.</li>
-<li>You will ingest, merge and clean the data in R, then select variables to complete any four out of five potential analyses, as described <a href="./study1a.html">in these instructions</a>.
-<ul>
-<li>You can do all five analyses if you like (as preparation for Quiz 2, for instance) but you will only present four in your report. No bonus credit for doing all five analyses.</li>
-</ul></li>
-<li>Dr Love has developed Study 1 <a href="./study1b.html">Report Specifications</a> and a Study 1 <a href="./study1c.html">Example Report</a> which should guide your eventual submitted Study 1 report.</li>
-</ul>
-</section>
-<section id="study-2" class="level1">
-<h1>Study 2</h1>
-<ul>
-<li><a href="./study2a.html">Study 2</a> is about building a model and making predictions. You will complete all elements of a data science project designed to create a statistical model for a quantitative outcome, then use it for prediction, and assess the quality of those predictions.</li>
-<li>Study 2 involves working with data from the same source that you used for Study 1. Again, you will work through all cleaning and data management requirements in your Study 2 report.
-<ul>
-<li>Study 2 involves the prediction of a quantitative outcome using a key predictor and some additional predictors in two linear regression models, and then comparing those two models.</li>
-<li>All of the material you need (from a statistical and coding perspective) to do these analyses has been or will be covered in our first 24 classes and in the Course Notes.</li>
-</ul></li>
-<li>Dr Love has developed Study 2 <a href="./study2b.html">Report Specifications</a> and a Study 2 <a href="./study2c.html">Example Report</a> which should guide your eventual submitted Study 2 report.</li>
-</ul>
-</section>
-<section id="grading" class="level1">
-<h1>Grading</h1>
-<p>Project B will be graded by Dr.&nbsp;Love on a scale from 0-100.</p>
-<ul>
-<li>On-time successful completion of the <a href="./register.html">Registration Form</a> is worth 5 points.</li>
-<li>The two study reports (<a href="./study1b.html">Study 1</a> and <a href="./study2b.html">Study 2</a>) due at the final Project B deadline are worth a combined 45 points.</li>
-<li>The oral presentation is worth 40 points. Details on the Oral Presentation are found in the <a href="./checklist.html">Checklist</a>.</li>
-<li>The <a href="./self_eval.html">self-evaluation</a> is worth 10 points.</li>
-<li>Late work on Project B is unacceptable. All deadlines are in the <a href="https://thomaselove.github.io/431-2023/calendar.html">Course Calendar</a>.</li>
-</ul>
-<p>Dr.&nbsp;Love cannot promise to provide written feedback on your Project B work. The grading timeline is simply too tight on my end. I apologize in advance.</p>
-</section>
-<section id="questions" class="level1">
-<h1>Questions?</h1>
-<p>If you have questions, let us know about them on Campuswire using the <strong>projectB</strong> folder, or speak with Dr.&nbsp;Love before or after class, or discuss them with the TAs during office hours.</p>
 
 
 </section>

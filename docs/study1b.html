@@ -9,7 +9,7 @@
 <meta name="author" content="431 Staff">
 <meta name="dcterms.date" content="2023-10-16">
 
-<title>431 Project B - 431 Project B Instructions</title>
+<title>431 Project B - Study 1 Report Specifications</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -184,15 +184,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-project-b" id="toc-what-is-project-b" class="nav-link active" data-scroll-target="#what-is-project-b">What is Project B?</a></li>
-  <li><a href="#whats-on-this-website" id="toc-whats-on-this-website" class="nav-link" data-scroll-target="#whats-on-this-website">What’s on this Website</a></li>
-  <li><a href="#project-b-deliverables" id="toc-project-b-deliverables" class="nav-link" data-scroll-target="#project-b-deliverables">Project B Deliverables</a></li>
-  <li><a href="#partnerships" id="toc-partnerships" class="nav-link" data-scroll-target="#partnerships">Partnerships?</a></li>
-  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
-  <li><a href="#study-1" id="toc-study-1" class="nav-link" data-scroll-target="#study-1">Study 1</a></li>
-  <li><a href="#study-2" id="toc-study-2" class="nav-link" data-scroll-target="#study-2">Study 2</a></li>
-  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions?</a></li>
+  <li><a href="#headings-you-should-use-in-the-study-1-report" id="toc-headings-you-should-use-in-the-study-1-report" class="nav-link active" data-scroll-target="#headings-you-should-use-in-the-study-1-report">Headings you should use in the Study 1 report</a>
+  <ul class="collapse">
+  <li><a href="#within-each-of-the-four-analyses-you-present-id-have-four-numbered-subsections" id="toc-within-each-of-the-four-analyses-you-present-id-have-four-numbered-subsections" class="nav-link" data-scroll-target="#within-each-of-the-four-analyses-you-present-id-have-four-numbered-subsections">Within each of the four analyses you present, I’d have four (numbered) subsections:</a></li>
+  </ul></li>
+  <li><a href="#and-finally" id="toc-and-finally" class="nav-link" data-scroll-target="#and-finally">And finally…</a></li>
   </ul>
 </nav>
     </div>
@@ -201,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">431 Project B Instructions</h1>
+<h1 class="title">Study 1 Report Specifications</h1>
 </div>
 
 
@@ -228,118 +224,88 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="what-is-project-b" class="level1">
-<h1>What is Project B?</h1>
-<p>Project B is the second of two real data science projects you’ll be doing this semester. It involves the completion of four tasks, which you’ll start working on in early November:</p>
+<p>Produce a beautiful HTML report containing 8 main sections, as described below. It should include:</p>
+<ul>
+<li>a meaningful title that does not use any of “Project B”, “Study 1” or “431”. I want a real title, that at least describes what you’re doing - be more specific than just “Exploring NHANES 2017-20 Responses”.</li>
+<li>an easy-to-understand and easy-to-navigate table of contents using the headings and subheadings discussed below</li>
+<li>Eight properly numbered sections with appropriately numbered sub-sections (use <strong>number_sections: TRUE</strong> in your YAML)</li>
+<li>the full names of the author(s), properly formatted</li>
+<li>the date, properly formatted using <code>date: last-modified</code> and later <code>date-format: iso</code> under the format <code>html:</code>.</li>
+<li>no hashtags in the R results (use <strong>knitr::opts_chunk$set(comment = NA)</strong> to do this.)</li>
+<li>no warnings, and do what you can to hide unhelpful messages with <code>message = FALSE</code> as needed</li>
+<li>no hidden code chunks</li>
+</ul>
+<section id="headings-you-should-use-in-the-study-1-report" class="level2">
+<h2 class="anchored" data-anchor-id="headings-you-should-use-in-the-study-1-report">Headings you should use in the Study 1 report</h2>
+<p>All of your work should be done in a fresh R project in a clean directory on your computer. - If you are working with NHANES data, your directory should include a <strong>data</strong> subdirectory, in which you will probably need to place the <strong>Love-boost.R</strong> script. - If you need to ingest non-NHANES data, then your <strong>data</strong> directory should also include the raw data files.</p>
 <ol type="1">
-<li>You will complete a Registration Form to obtain my approval for your plan, let me know if you’re working with a partner, and schedule your oral presentation.</li>
-<li>You (and your partner, if applicable) will present your project sometime between 12-11 and 12-14 to Dr.&nbsp;Love in his office in person or via Zoom.</li>
-<li>You will build Quarto and HTML reports describing your work.</li>
-<li>Finally, you will complete a Self-Evaluation form.</li>
+<li>Setup and Data Ingest
+<ul>
+<li>Be sure to load all necessary packages and ingest your data, either by reading it in with nhanesA or by reading in your raw non-NHANES data. Load the tidyverse last and do not load core packages from the tidyverse separately.</li>
+</ul></li>
+<li>Cleaning the Data
+<ul>
+<li>Be sure to review the material (including the Tips on Cleaning Data) provided in the <a href="data1.html">Data Development section</a> of this website.</li>
+<li>Note that it’s only necessary to clean the variables you will actually use in your four analyses below. Select only those variables (including the subject identifier) here when you create your analytic tibble.</li>
+<li>I also suggest applying <strong>clean_names</strong> at the start, but I wouldn’t otherwise change variable names if you’re not changing the meaning of the variables. If you want to change the names, you can, but then you must indicate that in your codebook, and do the renaming before you show the codebook.</li>
+<li>If you create a new categorical variable from an existing quantitative variables, do so in this section of your report, and then refer to that work in the analyses below when you use the new variable.</li>
+</ul></li>
+<li>Codebook and Data Description
+<ul>
+<li>The first thing that should appear in the section is a description of the subjects of your study.
+<ul>
+<li>As an example of what I’m looking for, suppose that you are working with NHANES data and have identified 3500 adults between the ages of 21 and 79 who have complete data on the variables in your final data set. In that case, the description I would want to see would be: “3500 adults ages 21-79 participating in NHANES 2017-18 with complete data on the variables listed in the table below.”</li>
+</ul></li>
+<li>In the first subsection in this section, labeled <strong>Codebook</strong>, present a codebook where you list all of the variables you will actually use in your four chosen analyses, in the format you will use in those analyses. Do not include any other variables (besides the subject identifying code) in the codebook.</li>
+<li>Present your codebook in a table, with either three or four columns.</li>
+<li>Place the variable name you will use in your analyses in the left-most column. The Codebook lists all of the variables you will use in your analyses (plus the subject identifying code). If you’re working with NHANES data, you should include both SEQN (subject code) in this list.</li>
+<li>The type of variable should be Quant (for quantitative variables), Binary (for two-category variables), or X-cat for multi-category variables) where X should either be 3, 4, 5 or 6, to indicate the number of levels in the variable.</li>
+<li>If you’ve changed a variable name (other than the obvious changes made by <strong>clean_names</strong>) from what you imported initially from your data source, add a final column where you specify the original variable name. The original name alone is sufficient here.
+<ul>
+<li>For those working with NHANES data, we will already be able to tell which data set in NHANES you used to obtain this variable from your initial pull of the data with the nhanesA package, so don’t specify the data set name again here.</li>
+</ul></li>
+</ul></li>
 </ol>
-<p>We strongly encourage you not to worry about Project B until you’ve completed Project A.</p>
-</section>
-<section id="whats-on-this-website" class="level1">
-<h1>What’s on this Website</h1>
+<p>Make sure your Codebook looks nice and is easy to read in your HTML result. - If you decide to rename any of the variables from the names provided with the raw data, you should specify your new name and the original name in your codebook. - Your codebook should also describe each of the variables you are using and specify whether they are quantitative, binary or multi-categorical. - In the second subsection (called <strong>Analytic Tibble</strong>), list your clean tibble that the codebook describes, so we can see it is a tibble. Only the variables in your Codebook should appear. - In the third and final subsection here, labeled <strong>Data Summary</strong>, provide useful descriptive summaries of each variable in your codebook other than the subject identifying code. You can use <code>describe</code> from <code>Hmisc</code> or another option of your choosing to accomplish this. You needn’t provide graphical summaries here, and include only variables that are in your codebook.</p>
+<p>Those first three sections should then be followed by any four of the following five sections (which will be sections 4-7 in your report)…</p>
 <ul>
-<li><a href="./data1.html">The Data</a>: Instructions on getting data for Project B
-<ul>
-<li>You’ll either use <a href="./data2.html">data from NHANES</a>, or from <a href="./data3.html">some other source</a>.</li>
-</ul></li>
-<li><a href="./register.html">Registration information</a> for your Project B plan.
-<ul>
-<li>This involves completing a <a href="https://bit.ly/431-projB-registration-2023">Google Form</a> by the deadline in mid-November specified on the <a href="https://thomaselove.github.io/431-2023/calendar.html">Course Calendar</a>. In this form, you will:
-<ul>
-<li>specify whether or not you are working with a partner</li>
-<li>tell us a little about the data source (NHANES or other) you plan to use</li>
-<li>provide options for when you can give your oral presentation, and whether you prefer to do so in person or via Zoom</li>
-</ul></li>
-</ul></li>
-<li>Instructions for <a href="./study1a.html">Study 1</a>
-<ul>
-<li>You’ll find information on <a href="./study1a.html">required Study 1 analyses</a></li>
-<li>We also provide detailed <a href="./study1b.html">Study 1 report specifications</a></li>
-<li>You’ll also find a <a href="./study1c.html">Study 1 example report</a></li>
-</ul></li>
-<li>Instructions for <a href="./study2a.html">Study 2</a>
-<ul>
-<li>You’ll find information on <a href="./study2a.html">required Study 2 analyses</a></li>
-<li>We also provide detailed <a href="./study2b.html">Study 2 report specifications</a></li>
-<li>You’ll also find a <a href="./study2c.html">Study 2 example report</a></li>
-</ul></li>
-<li><a href="./self_eval.html">Self-Evaluation Form</a> for Project B
-<ul>
-<li>If you work with a partner, each of you submits this form separately.</li>
-</ul></li>
-<li>A <a href="./checklist.html">Checklist</a> of the tasks that need to be accomplished for Project B, which also includes some details on the oral presentation you’ll give to Dr.&nbsp;Love in December.</li>
-<li>A <a href="./tipsheet.html">Tip Sheet</a> of about 20 things that came up last year that are worth your attention as you prepare your final materials for presentation and submission.</li>
-<li>The top menu also provides links to contact us, and to the 431 home page.</li>
+<li>Analysis A: Comparing 2 Means with Paired Samples</li>
+<li>Analysis B: Comparing 2 Means with Independent Samples</li>
+<li>Analysis C: Comparing X Means with Independent Samples (where you’d substitute in the number of means you’re comparing for X)</li>
+<li>Analysis D: Analyzing a 2x2 table</li>
+<li>Analysis E: Analyzing a JxK table (where you substitute in the values for J and K)</li>
 </ul>
-<p>All of the material you need (from a statistical and coding perspective) to do Project B has been or will be covered in our first 24 classes (which includes classes through the end of November), as well as in the Course Notes and Labs 1-7.</p>
-</section>
-<section id="project-b-deliverables" class="level1">
-<h1>Project B Deliverables</h1>
+<section id="within-each-of-the-four-analyses-you-present-id-have-four-numbered-subsections" class="level3">
+<h3 class="anchored" data-anchor-id="within-each-of-the-four-analyses-you-present-id-have-four-numbered-subsections">Within each of the four analyses you present, I’d have four (numbered) subsections:</h3>
 <ol type="1">
-<li>You will complete a <a href="./register.html">Registration Form</a> to obtain my approval for your plan, let me know if you’re working with a partner, and schedule your oral presentation, by the (mid-November) deadline on the <a href="https://thomaselove.github.io/431-2023/calendar.html">Course Calendar</a>.</li>
-<li>You (and your partner, if applicable) will present your project to Dr.&nbsp;Love in his office. Details on the Oral Presentation are found in the <a href="./checklist.html">Checklist</a> menu above. Presentations will be scheduled on December 11-14 using the <a href="./register.html">Registration Form</a>.</li>
-<li>You will build two Quarto and HTML reports (separate reports for <a href="./study1a.html">Study 1</a> and <a href="./study2a.html">Study 2</a>) by the final Project B deadline in the <a href="https://thomaselove.github.io/431-2023/calendar.html">Course Calendar</a>.
+<li>The Question
 <ul>
-<li>If you’re not using NHANES data, you’ll also submit your data to Dr.&nbsp;Love at that time.</li>
+<li>Start by describing what you want to study, and then specify a research question (which should end with a question mark and be something you can resolve with the planned analysis.)</li>
+<li>Don’t boil the ocean here. You’re looking for a research question that can be reasonably addressed using your data, so it has to be pretty straightforward.</li>
+<li>If you have a pre-existing belief about what will happen, before you look at the data, please feel encouraged to include a statement about that belief before specifying your question.</li>
 </ul></li>
-<li>Finally, you will complete a <a href="./self_eval.html">Self-Evaluation form</a>, as you did in Project A, by the final Project B deadline in the <a href="https://thomaselove.github.io/431-2023/calendar.html">Course Calendar</a>.</li>
+<li>Describing The Data
+<ul>
+<li>This should start with specifications of what each of the variables you are studying in this analysis actually mean.</li>
+<li>Your cleaning, creation of factors and other data management activities for each analysis should already have been shown in earlier sections. Please refer back to that section and don’t repeat what you’ve already done. Be sure that the Codebook you provided describes all variables you are using in your analyses here.</li>
+<li>Provide numerical summaries and visualizations of interest that are relevant to the analysis, and comment on any issues you observe.</li>
+</ul></li>
+<li>Main Analysis
+<ul>
+<li>Show your work, and comment on whatever decisions you make.</li>
+<li>Be sure to present and justify the assumptions you are making.</li>
+</ul></li>
+<li>Conclusions
+<ul>
+<li>Answer your research question, by clearly linking the analytic results to what you were asking at the start.</li>
+<li>If you can see a logical next step for the analysis of the question you asked, specify it. Also, if you specified a pre-existing belief about what would happen, reflect on that in light of the data.</li>
+</ul></li>
 </ol>
 </section>
-<section id="partnerships" class="level1">
-<h1>Partnerships?</h1>
-<p>You can work alone, or with one other person on this project. If you work as a pair, you will commit to that when you <a href="./register.html">register for the project</a>. Each of you will receive the team grade for the project reports, and an individual grade for the other components of the project.</p>
 </section>
-<section id="the-data" class="level1">
-<h1>The Data</h1>
-<p>You will work with the same <a href="./data1.html">data source</a> for <a href="./study1a.html">Study 1</a> and for <a href="./study2a.html">Study 2</a>, and these data will be developed either <a href="./data2.html">from NHANES</a> or from <a href="./data3.html">another public source</a> that you identify.</p>
-<ul>
-<li>You will find detailed instructions regarding the use of NHANES data for Project B <a href="./data2.html">here</a>.</li>
-<li>If you want to <a href="./data3.html">use other data</a>, you’ll need it to meet some specifications we’ll describe, and you’ll have to get Dr.&nbsp;Love’s permission when you <a href="./register.html">register your project</a>.</li>
-<li>Since most people consider working with NHANES data to be easier, we award <strong>four</strong> extra points to projects which use non-NHANES data.</li>
-</ul>
-</section>
-<section id="study-1" class="level1">
-<h1>Study 1</h1>
-<ul>
-<li><a href="./study1a.html">Study 1</a> is about making descriptive and exploratory comparisons and summaries of data. It’s not about building sophisticated statistical models.</li>
-<li>You will ingest, merge and clean the data in R, then select variables to complete any four out of five potential analyses, as described <a href="./study1a.html">in these instructions</a>.
-<ul>
-<li>You can do all five analyses if you like (as preparation for Quiz 2, for instance) but you will only present four in your report. No bonus credit for doing all five analyses.</li>
-</ul></li>
-<li>Dr Love has developed Study 1 <a href="./study1b.html">Report Specifications</a> and a Study 1 <a href="./study1c.html">Example Report</a> which should guide your eventual submitted Study 1 report.</li>
-</ul>
-</section>
-<section id="study-2" class="level1">
-<h1>Study 2</h1>
-<ul>
-<li><a href="./study2a.html">Study 2</a> is about building a model and making predictions. You will complete all elements of a data science project designed to create a statistical model for a quantitative outcome, then use it for prediction, and assess the quality of those predictions.</li>
-<li>Study 2 involves working with data from the same source that you used for Study 1. Again, you will work through all cleaning and data management requirements in your Study 2 report.
-<ul>
-<li>Study 2 involves the prediction of a quantitative outcome using a key predictor and some additional predictors in two linear regression models, and then comparing those two models.</li>
-<li>All of the material you need (from a statistical and coding perspective) to do these analyses has been or will be covered in our first 24 classes and in the Course Notes.</li>
-</ul></li>
-<li>Dr Love has developed Study 2 <a href="./study2b.html">Report Specifications</a> and a Study 2 <a href="./study2c.html">Example Report</a> which should guide your eventual submitted Study 2 report.</li>
-</ul>
-</section>
-<section id="grading" class="level1">
-<h1>Grading</h1>
-<p>Project B will be graded by Dr.&nbsp;Love on a scale from 0-100.</p>
-<ul>
-<li>On-time successful completion of the <a href="./register.html">Registration Form</a> is worth 5 points.</li>
-<li>The two study reports (<a href="./study1b.html">Study 1</a> and <a href="./study2b.html">Study 2</a>) due at the final Project B deadline are worth a combined 45 points.</li>
-<li>The oral presentation is worth 40 points. Details on the Oral Presentation are found in the <a href="./checklist.html">Checklist</a>.</li>
-<li>The <a href="./self_eval.html">self-evaluation</a> is worth 10 points.</li>
-<li>Late work on Project B is unacceptable. All deadlines are in the <a href="https://thomaselove.github.io/431-2023/calendar.html">Course Calendar</a>.</li>
-</ul>
-<p>Dr.&nbsp;Love cannot promise to provide written feedback on your Project B work. The grading timeline is simply too tight on my end. I apologize in advance.</p>
-</section>
-<section id="questions" class="level1">
-<h1>Questions?</h1>
-<p>If you have questions, let us know about them on Campuswire using the <strong>projectB</strong> folder, or speak with Dr.&nbsp;Love before or after class, or discuss them with the TAs during office hours.</p>
+<section id="and-finally" class="level2">
+<h2 class="anchored" data-anchor-id="and-finally">And finally…</h2>
+<p>As the final section of your report (which should be section 8), include the session information (using <code>session_info()</code> from either <code>xfun</code> or <code>sessioninfo</code>) as a separate section at the end of your report.</p>
 
 
 </section>

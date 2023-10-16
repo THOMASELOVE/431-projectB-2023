@@ -9,7 +9,7 @@
 <meta name="author" content="431 Staff">
 <meta name="dcterms.date" content="2023-10-16">
 
-<title>431 Project B - 431 Project B Instructions</title>
+<title>431 Project B - Using NHANES Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -82,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -184,15 +218,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-project-b" id="toc-what-is-project-b" class="nav-link active" data-scroll-target="#what-is-project-b">What is Project B?</a></li>
-  <li><a href="#whats-on-this-website" id="toc-whats-on-this-website" class="nav-link" data-scroll-target="#whats-on-this-website">What’s on this Website</a></li>
-  <li><a href="#project-b-deliverables" id="toc-project-b-deliverables" class="nav-link" data-scroll-target="#project-b-deliverables">Project B Deliverables</a></li>
-  <li><a href="#partnerships" id="toc-partnerships" class="nav-link" data-scroll-target="#partnerships">Partnerships?</a></li>
-  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
-  <li><a href="#study-1" id="toc-study-1" class="nav-link" data-scroll-target="#study-1">Study 1</a></li>
-  <li><a href="#study-2" id="toc-study-2" class="nav-link" data-scroll-target="#study-2">Study 2</a></li>
-  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions?</a></li>
+  <li><a href="#about-nhanes-from-the-nhanes-website" id="toc-about-nhanes-from-the-nhanes-website" class="nav-link active" data-scroll-target="#about-nhanes-from-the-nhanes-website">About NHANES (from the NHANES website)</a></li>
+  <li><a href="#general-advice-for-nhanes-learning-about-the-available-data" id="toc-general-advice-for-nhanes-learning-about-the-available-data" class="nav-link" data-scroll-target="#general-advice-for-nhanes-learning-about-the-available-data">General Advice for NHANES: Learning About The Available Data</a></li>
+  <li><a href="#getting-the-nhanes-data" id="toc-getting-the-nhanes-data" class="nav-link" data-scroll-target="#getting-the-nhanes-data">Getting the NHANES data</a></li>
+  <li><a href="#using-the-nhanesa-package" id="toc-using-the-nhanesa-package" class="nav-link" data-scroll-target="#using-the-nhanesa-package">Using the nhanesA package</a>
+  <ul class="collapse">
+  <li><a href="#an-example" id="toc-an-example" class="nav-link" data-scroll-target="#an-example">An Example</a></li>
+  </ul></li>
+  <li><a href="#merging-nhanes-files" id="toc-merging-nhanes-files" class="nav-link" data-scroll-target="#merging-nhanes-files">Merging NHANES files</a></li>
+  <li><a href="#which-variables-subjects-should-i-use" id="toc-which-variables-subjects-should-i-use" class="nav-link" data-scroll-target="#which-variables-subjects-should-i-use">Which variables / subjects should I use?</a></li>
   </ul>
 </nav>
     </div>
@@ -201,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">431 Project B Instructions</h1>
+<h1 class="title">Using NHANES Data</h1>
 </div>
 
 
@@ -228,118 +262,129 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="what-is-project-b" class="level1">
-<h1>What is Project B?</h1>
-<p>Project B is the second of two real data science projects you’ll be doing this semester. It involves the completion of four tasks, which you’ll start working on in early November:</p>
-<ol type="1">
-<li>You will complete a Registration Form to obtain my approval for your plan, let me know if you’re working with a partner, and schedule your oral presentation.</li>
-<li>You (and your partner, if applicable) will present your project sometime between 12-11 and 12-14 to Dr.&nbsp;Love in his office in person or via Zoom.</li>
-<li>You will build Quarto and HTML reports describing your work.</li>
-<li>Finally, you will complete a Self-Evaluation form.</li>
-</ol>
-<p>We strongly encourage you not to worry about Project B until you’ve completed Project A.</p>
+<p>If you select the NHANES option, you will be using data from the <a href="https://wwwn.cdc.gov/nchs/nhanes/Default.aspx">National Health and Nutrition Examination Survey</a>.</p>
+<p>If you decide to use some other data set instead for Project B, then you should <a href="./data3.html">visit this page</a>.</p>
+<p>In either case, be sure to read through and verify that your data meet all requirements described on our <a href="./data1.html">Data Development</a> page.</p>
+<section id="about-nhanes-from-the-nhanes-website" class="level2">
+<h2 class="anchored" data-anchor-id="about-nhanes-from-the-nhanes-website">About NHANES (from <a href="https://www.cdc.gov/nchs/nhanes/about_nhanes.htm">the NHANES website</a>)</h2>
+<blockquote class="blockquote">
+<p>The National Health and Nutrition Examination Survey (NHANES) is a program of studies designed to assess the health and nutritional status of adults and children in the United States. The survey is unique in that it combines interviews and physical examinations. NHANES is a major program of the National Center for Health Statistics (NCHS). NCHS is part of the Centers for Disease Control and Prevention (CDC) and has the responsibility for producing vital and health statistics for the Nation.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>The NHANES program began in the early 1960s and has been conducted as a series of surveys focusing on different population groups or health topics. In 1999, the survey became a continuous program that has a changing focus on a variety of health and nutrition measurements to meet emerging needs. The survey examines a nationally representative sample of about 5,000 persons each year. These persons are located in counties across the country, 15 of which are visited each year.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>The NHANES interview includes demographic, socioeconomic, dietary, and health-related questions. The examination component consists of medical, dental, and physiological measurements, as well as laboratory tests administered by highly trained medical personnel.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Findings from this survey will be used to determine the prevalence of major diseases and risk factors for diseases. Information will be used to assess nutritional status and its association with health promotion and disease prevention. NHANES findings are also the basis for national standards for such measurements as height, weight, and blood pressure. Data from this survey will be used in epidemiological studies and health sciences research, which help develop sound public health policy, direct and design health programs and services, and expand the health knowledge for the Nation.</p>
+</blockquote>
 </section>
-<section id="whats-on-this-website" class="level1">
-<h1>What’s on this Website</h1>
-<ul>
-<li><a href="./data1.html">The Data</a>: Instructions on getting data for Project B
-<ul>
-<li>You’ll either use <a href="./data2.html">data from NHANES</a>, or from <a href="./data3.html">some other source</a>.</li>
-</ul></li>
-<li><a href="./register.html">Registration information</a> for your Project B plan.
-<ul>
-<li>This involves completing a <a href="https://bit.ly/431-projB-registration-2023">Google Form</a> by the deadline in mid-November specified on the <a href="https://thomaselove.github.io/431-2023/calendar.html">Course Calendar</a>. In this form, you will:
-<ul>
-<li>specify whether or not you are working with a partner</li>
-<li>tell us a little about the data source (NHANES or other) you plan to use</li>
-<li>provide options for when you can give your oral presentation, and whether you prefer to do so in person or via Zoom</li>
-</ul></li>
-</ul></li>
-<li>Instructions for <a href="./study1a.html">Study 1</a>
-<ul>
-<li>You’ll find information on <a href="./study1a.html">required Study 1 analyses</a></li>
-<li>We also provide detailed <a href="./study1b.html">Study 1 report specifications</a></li>
-<li>You’ll also find a <a href="./study1c.html">Study 1 example report</a></li>
-</ul></li>
-<li>Instructions for <a href="./study2a.html">Study 2</a>
-<ul>
-<li>You’ll find information on <a href="./study2a.html">required Study 2 analyses</a></li>
-<li>We also provide detailed <a href="./study2b.html">Study 2 report specifications</a></li>
-<li>You’ll also find a <a href="./study2c.html">Study 2 example report</a></li>
-</ul></li>
-<li><a href="./self_eval.html">Self-Evaluation Form</a> for Project B
-<ul>
-<li>If you work with a partner, each of you submits this form separately.</li>
-</ul></li>
-<li>A <a href="./checklist.html">Checklist</a> of the tasks that need to be accomplished for Project B, which also includes some details on the oral presentation you’ll give to Dr.&nbsp;Love in December.</li>
-<li>A <a href="./tipsheet.html">Tip Sheet</a> of about 20 things that came up last year that are worth your attention as you prepare your final materials for presentation and submission.</li>
-<li>The top menu also provides links to contact us, and to the 431 home page.</li>
-</ul>
-<p>All of the material you need (from a statistical and coding perspective) to do Project B has been or will be covered in our first 24 classes (which includes classes through the end of November), as well as in the Course Notes and Labs 1-7.</p>
-</section>
-<section id="project-b-deliverables" class="level1">
-<h1>Project B Deliverables</h1>
+<section id="general-advice-for-nhanes-learning-about-the-available-data" class="level2">
+<h2 class="anchored" data-anchor-id="general-advice-for-nhanes-learning-about-the-available-data">General Advice for NHANES: Learning About The Available Data</h2>
+<p>The links in this section go to the <a href="https://wwwn.cdc.gov/nchs/nhanes/Default.aspx">Survey Data and Documentation section</a> of the <a href="https://www.cdc.gov/nchs/nhanes/index.htm">NHANES website</a>.</p>
 <ol type="1">
-<li>You will complete a <a href="./register.html">Registration Form</a> to obtain my approval for your plan, let me know if you’re working with a partner, and schedule your oral presentation, by the (mid-November) deadline on the <a href="https://thomaselove.github.io/431-2023/calendar.html">Course Calendar</a>.</li>
-<li>You (and your partner, if applicable) will present your project to Dr.&nbsp;Love in his office. Details on the Oral Presentation are found in the <a href="./checklist.html">Checklist</a> menu above. Presentations will be scheduled on December 11-14 using the <a href="./register.html">Registration Form</a>.</li>
-<li>You will build two Quarto and HTML reports (separate reports for <a href="./study1a.html">Study 1</a> and <a href="./study2a.html">Study 2</a>) by the final Project B deadline in the <a href="https://thomaselove.github.io/431-2023/calendar.html">Course Calendar</a>.
+<li>We strongly encourage the use of <a href="https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?cycle=2017-2020">the NHANES 2017 - March 2020 Pre-pandemic data</a> for Project B.
 <ul>
-<li>If you’re not using NHANES data, you’ll also submit your data to Dr.&nbsp;Love at that time.</li>
+<li>This is the most recent public data that is fairly complete.</li>
 </ul></li>
-<li>Finally, you will complete a <a href="./self_eval.html">Self-Evaluation form</a>, as you did in Project A, by the final Project B deadline in the <a href="https://thomaselove.github.io/431-2023/calendar.html">Course Calendar</a>.</li>
+<li>You are required to use variables taken from <strong>at least three</strong> different NHANES data sets. This must include the Demographics data set, in addition to two other data sets taken from at least one of the other four available data groups (Dietary, Examination, Laboratory and Questionnaire.)
+<ul>
+<li>The <a href="https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Demographics&amp;Cycle=2017-2020">Demographics data group</a> should be part of all projects, and it contains a single data set.</li>
+<li>The <a href="https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Dietary&amp;Cycle=2017-2020">Dietary data group</a> includes 14 different data sets.</li>
+<li>The <a href="https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Examination&amp;Cycle=2017-2020">Examination data group</a> includes 11 data sets.</li>
+<li>The <a href="https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Laboratory&amp;Cycle=2017-2020">Laboratory data group</a> contains 36 data sets.</li>
+<li>The <a href="https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Questionnaire&amp;Cycle=2017-2020">Questionnaire data group</a> also contains 37 data sets.</li>
+</ul></li>
+<li>You will use the <strong>nhanesA</strong> package in R to import and work with the available data. I’ve recently added this package to our list of recommended installations.</li>
+<li>Note that none of your work will be using the sampling weights which are a key part of NHANES. Thus, none of your results from Project B will be truly representative of the national population. That’s OK for this exercise.</li>
 </ol>
 </section>
-<section id="partnerships" class="level1">
-<h1>Partnerships?</h1>
-<p>You can work alone, or with one other person on this project. If you work as a pair, you will commit to that when you <a href="./register.html">register for the project</a>. Each of you will receive the team grade for the project reports, and an individual grade for the other components of the project.</p>
-</section>
-<section id="the-data" class="level1">
-<h1>The Data</h1>
-<p>You will work with the same <a href="./data1.html">data source</a> for <a href="./study1a.html">Study 1</a> and for <a href="./study2a.html">Study 2</a>, and these data will be developed either <a href="./data2.html">from NHANES</a> or from <a href="./data3.html">another public source</a> that you identify.</p>
+<section id="getting-the-nhanes-data" class="level2">
+<h2 class="anchored" data-anchor-id="getting-the-nhanes-data">Getting the NHANES data</h2>
+<p>Visit the NHANES website and identify the data you want to view.</p>
 <ul>
-<li>You will find detailed instructions regarding the use of NHANES data for Project B <a href="./data2.html">here</a>.</li>
-<li>If you want to <a href="./data3.html">use other data</a>, you’ll need it to meet some specifications we’ll describe, and you’ll have to get Dr.&nbsp;Love’s permission when you <a href="./register.html">register your project</a>.</li>
-<li>Since most people consider working with NHANES data to be easier, we award <strong>four</strong> extra points to projects which use non-NHANES data.</li>
+<li>For example, the Demographic Variables and Sample Weights for NHANES 2017-March 2020 <a href="https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Demographics&amp;Cycle=2017-2020">are described here</a>.</li>
+<li>Each NHANES data set is associated with a Doc File (which stands for Data Documentation, Codebook and Frequencies). For instance, <a href="https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/P_DEMO.htm">here’s the one</a> for Demographics in 2017-March 2020. This file can be viewed online (it’s an HTML file) and it will tell you what variables are included in that data set.</li>
+<li>Each NHANES data set is available as a SAS transport file. For example, it’s the <strong>P_DEMO</strong> file for Demographics in 2017-March 2020, <a href="https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Demographics&amp;Cycle=2017-2020">as you can see here</a>.</li>
 </ul>
 </section>
-<section id="study-1" class="level1">
-<h1>Study 1</h1>
+<section id="using-the-nhanesa-package" class="level2">
+<h2 class="anchored" data-anchor-id="using-the-nhanesa-package">Using the nhanesA package</h2>
+<p>Once you’ve selected the data sets from NHANES that you want to use in your project (remember that you need at least 3), the <strong>nhanesA</strong> package in R can be used to obtain them.</p>
+<p>Here’s a little vignette <a href="https://cran.rstudio.com/web/packages/nhanesA/vignettes/Introducing_nhanesA.html">introducing nhanesA</a> from Christopher Endres, who built the package. The key functions in the <strong>nhanesA</strong> package that I think you might use are those described in that vignette, but the main one is simply called <strong>nhanes</strong>.</p>
+<section id="an-example" class="level3">
+<h3 class="anchored" data-anchor-id="an-example">An Example</h3>
+<p>For example, suppose we want to load the Blood Pressure data from the <a href="https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Examination&amp;CycleBeginYear=2017">2017-18 Examination files</a> at NHANES (contained in the BPX_J data file) into a tibble called bp_data in R.</p>
 <ul>
-<li><a href="./study1a.html">Study 1</a> is about making descriptive and exploratory comparisons and summaries of data. It’s not about building sophisticated statistical models.</li>
-<li>You will ingest, merge and clean the data in R, then select variables to complete any four out of five potential analyses, as described <a href="./study1a.html">in these instructions</a>.
+<li>Note that you will instead use 2017-March 2020 data, which for Blood Pressure would be (according <a href="https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Examination&amp;Cycle=2017-2020">to this page</a>) the <code>P_BPXO</code> file, rather than <code>BPX_J</code>.</li>
+</ul>
+<p>We would use the following code, which will take a few minutes to run.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nhanesA)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>bp_raw <span class="ot">&lt;-</span> <span class="fu">nhanes</span>(<span class="st">'BPX_J'</span>) <span class="sc">|&gt;</span> <span class="fu">tibble</span>()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(bp_raw, <span class="st">"data/BPX_J.Rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Once you’ve downloaded the file once, you should save it as an R data frame, and then comment out the initial code you used to pull down the data in R. Then, when you rerun, it’ll be all set. Remember to create a data subfolder in your R Project B directory before you run this code.</p>
+<p>So your final presentation in Project B should instead look like this, which will run much more quickly.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nhanesA)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># pull in data from BPX_J from NHANES and save it</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># bp_raw &lt;- nhanes('BPX_J') |&gt; tibble()</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># saveRDS(bp_raw, "data/BPX_J.Rds")</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Now that data are saved, I can just read in the tibble</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>bp_raw <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/BPX_J.Rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="merging-nhanes-files" class="level2">
+<h2 class="anchored" data-anchor-id="merging-nhanes-files">Merging NHANES files</h2>
+<p>You will need to include data from multiple tibbles (data sets) pulled down in your project. I suggest you first select only those variables you intend to use in your analytic data file from each individual tibble you have created. This should always include the SEQN variable in every tibble, since that is what you will use to match up responses across those tibbles.</p>
 <ul>
-<li>You can do all five analyses if you like (as preparation for Quiz 2, for instance) but you will only present four in your report. No bonus credit for doing all five analyses.</li>
+<li>Your final analyses should be based on somewhere between 500 and 7,500 complete cases from the NHANES 2017-March 2020 data.</li>
+</ul>
+<p>To merge a demographics tibble called <strong>DEMO</strong> with a <strong>BPX</strong> tibble to create a tibble called <strong>NEW</strong> that contains the variables from both <strong>DEMO</strong> and <strong>BPX</strong> for all of the subjects contained in <strong>DEMO</strong>, I’d use a <strong>left_join</strong>, as follows.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>NEW <span class="ot">&lt;-</span> <span class="fu">left_join</span>(DEMO, BPX, <span class="at">by =</span> <span class="st">"SEQN"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>I’d then use another <strong>left_join</strong> to merge this NEW result with another tibble (say, the <strong>HDL_J</strong> tibble) and so on.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>NEW2 <span class="ot">&lt;-</span> <span class="fu">left_join</span>(NEW, HDL_J, <span class="at">by =</span> <span class="st">"SEQN"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then, when I was done merging and cleaning the data I would be sure to save that result as a new Rds file, just in case I needed it again.</p>
+</section>
+<section id="which-variables-subjects-should-i-use" class="level2">
+<h2 class="anchored" data-anchor-id="which-variables-subjects-should-i-use">Which variables / subjects should I use?</h2>
+<p>That’s up to you. Find variables of interest in the description files, and pull them out and see if they will work for you.</p>
+<ul>
+<li>Focus on subjects who have a <strong>RIDSTATR</strong> value of 2 (meaning they were both interviewed and examined) - this variable is part of the Demographics file.
+<ul>
+<li>For 2017-March 2020, there are 14,300 such subjects.</li>
 </ul></li>
-<li>Dr Love has developed Study 1 <a href="./study1b.html">Report Specifications</a> and a Study 1 <a href="./study1c.html">Example Report</a> which should guide your eventual submitted Study 1 report.</li>
-</ul>
-</section>
-<section id="study-2" class="level1">
-<h1>Study 2</h1>
+<li>I encourage you to not use subjects listed with ages of 80 (RIDAGEYR = 80) since that’s a catch-all for all subjects ages 80 and older.
 <ul>
-<li><a href="./study2a.html">Study 2</a> is about building a model and making predictions. You will complete all elements of a data science project designed to create a statistical model for a quantitative outcome, then use it for prediction, and assess the quality of those predictions.</li>
-<li>Study 2 involves working with data from the same source that you used for Study 1. Again, you will work through all cleaning and data management requirements in your Study 2 report.
-<ul>
-<li>Study 2 involves the prediction of a quantitative outcome using a key predictor and some additional predictors in two linear regression models, and then comparing those two models.</li>
-<li>All of the material you need (from a statistical and coding perspective) to do these analyses has been or will be covered in our first 24 classes and in the Course Notes.</li>
+<li>For 2017-March 2020, of the 14,300 listed above, 13,724 are less than 80.</li>
 </ul></li>
-<li>Dr Love has developed Study 2 <a href="./study2b.html">Report Specifications</a> and a Study 2 <a href="./study2c.html">Example Report</a> which should guide your eventual submitted Study 2 report.</li>
-</ul>
-</section>
-<section id="grading" class="level1">
-<h1>Grading</h1>
-<p>Project B will be graded by Dr.&nbsp;Love on a scale from 0-100.</p>
+<li>You should either use children or adults in your final analyses, and not both together.
 <ul>
-<li>On-time successful completion of the <a href="./register.html">Registration Form</a> is worth 5 points.</li>
-<li>The two study reports (<a href="./study1b.html">Study 1</a> and <a href="./study2b.html">Study 2</a>) due at the final Project B deadline are worth a combined 45 points.</li>
-<li>The oral presentation is worth 40 points. Details on the Oral Presentation are found in the <a href="./checklist.html">Checklist</a>.</li>
-<li>The <a href="./self_eval.html">self-evaluation</a> is worth 10 points.</li>
-<li>Late work on Project B is unacceptable. All deadlines are in the <a href="https://thomaselove.github.io/431-2023/calendar.html">Course Calendar</a>.</li>
+<li>There are 7,853 adults between the ages of 21 and 79 of the 13,724.</li>
+<li>Some variables are only collected on children, others only on adults.</li>
+</ul></li>
+<li>I encourage you to filter your final set of variables to complete cases, and reflect on how many observations you wind up with
+<ul>
+<li>In many cases, you should have well over 5,000, but depending on what you select, you may have a much smaller subset, and you should be able to explain to us why that is the case, if it is.</li>
+<li>For example, if you’re studying something that is only measured in females, or in children, you’ll have a smaller sample for that reason, and you need to make that clear to us in your report. At a minimum, you will need at least 500 complete cases even if you’re using heavily filtered NHANES data.</li>
+</ul></li>
 </ul>
-<p>Dr.&nbsp;Love cannot promise to provide written feedback on your Project B work. The grading timeline is simply too tight on my end. I apologize in advance.</p>
-</section>
-<section id="questions" class="level1">
-<h1>Questions?</h1>
-<p>If you have questions, let us know about them on Campuswire using the <strong>projectB</strong> folder, or speak with Dr.&nbsp;Love before or after class, or discuss them with the TAs during office hours.</p>
 
 
 </section>
