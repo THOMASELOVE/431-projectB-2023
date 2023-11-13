@@ -12,7 +12,7 @@ You must use the same data source for Study 1 and Study 2 in Project B. That dat
 
 - NHANES data, as [discussed here](data2.qmd).
 - something else, as [discussed here](data3.qmd).
-  - To encourage people to use data other than NHANES, there is a four-point bonus in the final project B grade available for all projects which use non-NHANES data.
+  - To encourage people to use data other than NHANES, there is a three-point bonus in the final project B grade available for all projects which use non-NHANES data.
 
 # Data Requirements for Study 1 and Study 2
 
