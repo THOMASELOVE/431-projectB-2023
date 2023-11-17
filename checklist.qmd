@@ -38,7 +38,7 @@ Your Study 2 Report is to be submitted to Canvas by the deadline in the Course C
 
 # Oral Presentation of Results
 
-Once the presentation schedule is available, please do everything you can to ensure that you will be where you need to be for the scheduled half-hour window with Dr. Love. The actual meeting will take about 20 minutes, but it is helpful for us to have a little extra time available (hence the half-hour sessions) to deal with surprises and transitions. If you have an emergency on the day of your presentation, email Dr. Love as soon as possible.
+The presentation schedule is [now available](https://github.com/THOMASELOVE/431-classes-2023/blob/main/projB/schedule.md). Your meeting time is 20 minutes long, and please arrive 5 minutes early, either in person or via Zoom. If you have an emergency on the day of your presentation, email Dr. Love as soon as possible.
 
 Your meeting will involve materials from each of your studies, discussed in a fairly regimented way, described below. If you are working with a partner, Dr. Love will randomly determine at the meeting who will speak and when, so you need to each be prepared to give the entire presentation. Dr. Love will keep track of time, and move you along as necessary, so you won't have to worry about that.
 
@@ -72,7 +72,7 @@ For most of the remaining time, I will ask you about your study, and try to help
 
 ### Final Questions (2-4 minutes)
 
-Depending on time, I may ask you any of several questions at the end of our meeting. Some possibilities you should be prepared for include the following (some of which also appear in the self-evaluation)
+Depending on remaining time, I may ask you any of several questions at the end of our meeting. Some possibilities you should be prepared for include the following (some of which also appear in the self-evaluation)
 
 - What percentage of your time in Project B did you spend obtaining, cleaning, merging and tidying data, as opposed to actually performing analyses on tidy data?
 - Tell me something useful that you learned from doing Project B.
